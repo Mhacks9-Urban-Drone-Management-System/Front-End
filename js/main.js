@@ -1,24 +1,15 @@
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
+var terrain = [];
+$.get('http://simonguo.tech/map.txt', function(data) {
+  var lines = data.split('\n');
+  for (var i = 0; i < lines.length; i++)
+  {
+    terrain.push([]);
+    var tiles = lines[i].split(' ');
+    for (var j = 0; j < tiles.length - 1; j++)
     {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                var strArray[] = allText.split("\n");
-                alert(allText);
-            }
-        }
+      var tileData = tiles[j].split(',');
+      terrain[i].push([parseInt(tileData[0]), parseInt(tileData[1])]);
     }
-    rawFile.send(null);
-}
-
-readTextFile("../map.txt");
-
-for (var i = 0; i < array.length; i++) {
-  array[i]
-}
+  }
+  console.log(terrain);
+});
