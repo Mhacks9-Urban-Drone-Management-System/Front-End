@@ -935,5 +935,16 @@ h1.page-header {
 }
 
 .sidebar-title{
-	margin-left: 15px;
+
+	margin-left: 20px;
+}
+
+.icon-style{
+	padding-left: 7px;
+	padding-right: 10px;
+}
+
+.icon-style p{
+	font-size: 18px;
+	color: #30A5FF;
 }
